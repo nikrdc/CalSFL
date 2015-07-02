@@ -1,0 +1,109 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>UC Berkeley, Students for Liberty</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#mce-EMAIL").bind("change paste keyup", function() {
+                var regex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+                if (regex.test($(this).val())) {
+                    $("#mc_embed_signup .button").addClass("ready");
+                } else {
+                    $("#mc_embed_signup .button").removeClass("ready");
+                }
+            });
+        });
+    </script>
+    <script type="text/javascript">
+	var MYBLOG_LIMIT = 1;
+	var MYWRAPPER_CLASS = 'mostrecentpost';
+	 
+	var WP={open:function(b){var a={posts:function(){var d=MYBLOG_LIMIT;var e=0;var c={all:function(g){var f=b+"/api/get_recent_posts/";f+="?count="+d+"&page="+e+"&callback=?";jQuery.getJSON(f,function(l){var k=l.posts;for(var j=0;j<k.length;j++){var h=k[j];h.createComment=function(i,m){i.postId=h.id;a.comments().create(i,m)}}g(k)})},findBySlug:function(f,h){var g=b+"/api/get_post/";g+="?slug="+f+"&callback=?";jQuery.getJSON(g,function(i){h(i.post)})},limit:function(f){d=f;return c},page:function(f){e=f;return c}};return c},pages:function(){var c={findBySlug:function(d,f){var e=b+"/api/get_page/";e+="?slug="+d+"&callback=?";jQuery.getJSON(e,function(g){f(g.page)})}};return c},categories:function(){var c={all:function(e){var d=b+"/api/get_category_index/";d+="?callback=?";jQuery.getJSON(d,function(f){e(f.categories)})}};return c},tags:function(){var c={all:function(e){var d=b+"/api/get_tag_index/";d+="?callback=?";jQuery.getJSON(d,function(f){e(f.tags)})}};return c},comments:function(){var c={create:function(f,e){var d=b+"/api/submit_comment/";d+="?post_id="+f.postId+"&name="+f.name+"&email="+f.email+"&content="+f.content+"&callback=?";jQuery.getJSON(d,function(g){e(g)})}};return c}};return a}};
+	 
+	var blog = WP.open('http://www.calsfl.com/blog');
+	blog.posts().all(function(posts){
+	  for(var i = 0; i < posts.length; i++){
+	    jQuery('.'+MYWRAPPER_CLASS).append(function(){
+	      return (posts[i].thumbnail) ? '<a href="'+posts[i].url+'"><img src="'+posts[i].thumbnail+'"/></a>' : '<div id="name">'+posts[i].title+'</div><div id="details">by '+posts[i].author.name+'</div><div id="description">'+posts[i].excerpt+'</div>';
+	 
+	    });
+	  }
+	});
+    </script>
+</head>
+<body>
+
+<div id="fb-root"></div>
+<script>
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=645644088843322&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+
+	<div id="header">
+		<a href=""><img id="logo" src="img/logo.png"></a>
+	</div>
+
+	<div id="content">
+		
+		<div class="fb-like" data-href="https://www.facebook.com/sflberkeley" data-layout="standard" data-action="like" data-show-faces="false" data-share="false"></div>
+		<div id="intro">
+			Cultivating the ideas of free markets, non-intervention, and maximum individual liberty at UC Berkeley and the surrounding community.
+		</div>
+		<a href="about" class="italiclink">&#8658; Read more about us</a>
+
+		<div class="box">
+			<div class="section">From our blog</div>
+			<div class="mostrecentpost"></div>
+		<a href="http://www.calsfl.com/blog" class="italiclink">&#8658; Continue reading</a>
+		</div>
+
+		<div class="box">
+			<div class="section">Upcoming discussion</div>
+			<div id="name">Net Neutrality</div>
+			<div id="details">Thursday, February 26 at 7 PM in 65 Evans Hall</div>
+			<div id="description">This week CalSFL will be discussing net neutrality. Should the internet be regulated? Who owns the internet? Who does net neutrality benefit? Is Obama ruining everything? All of these questions and more will be answered this week! As usual there will be a social afterwards.</div>
+			<a href="https://www.facebook.com/events/1596524410565617/" class="italiclink">&#8658; RSVP on Facebook</a>
+		</div>
+
+		<div class="box">
+			<div class="section">Keep in touch</div>
+			<div id="follow">Follow us on Twitter <a href="https://twitter.com/calsfl">@calsfl</a>, join our <a href="https://www.facebook.com/groups/57785048867/">Facebook</a> group, or subscribe to our email list (below). If you have any questions or want to get involved, send us an email us at <a href="mailto:admin@calsfl.com">admin@calsfl.com</a>.</div>
+
+            <!-- Begin MailChimp Signup Form -->
+            <div id="mc_embed_signup">
+                <form action="//calsfl.us8.list-manage.com/subscribe/post?u=b65a1ba98e793a791139fd813&amp;id=750c643dfa" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                
+                    <div class="mc-field-group">
+                        <!-- <label for="mce-EMAIL">Email Address </label> -->
+                        <input type="email" value="" name="EMAIL" placeholder="Email address" class="required email" id="mce-EMAIL">
+                    </div>
+                    <div id="mce-responses" class="clear">
+                            <div class="response" id="mce-error-response" style="display:none"></div>
+                            <div class="response" id="mce-success-response" style="display:none"></div>
+                    </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                    <div style="position: absolute; left: -5000px;"><input type="text" name="b_b65a1ba98e793a791139fd813_750c643dfa" tabindex="-1" value=""></div>
+                    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                </form>
+            </div>
+            <!--End mc_embed_signup-->
+		</div>
+
+	</div>
+	
+	<div id="line"></div>
+
+	<div id="footer">
+		Futuate Cohortem Urbanam
+	</div>
+
+</body>
+</html>
