@@ -12,8 +12,10 @@
                 var regex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
                 if (regex.test($(this).val())) {
                     $("#mc_embed_signup .button").addClass("ready");
+                    $("#mce-EMAIL").addClass("ready");
                 } else {
                     $("#mc_embed_signup .button").removeClass("ready");
+                    $("#mce-EMAIL").removeClass("ready");
                 }
             });
         });

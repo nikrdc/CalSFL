@@ -78,8 +78,8 @@ body, html {
 #content {
 	width: 60%;
 	margin: 80px auto 20% auto;
-	min-width: 280px;
-	max-width: 800px;
+	min-width: 430px;
+	max-width: 600px;
 }
 
 .italiclink {
@@ -107,7 +107,8 @@ body, html {
 
 #line {
 	width: 60%;
-	min-width: 280px;
+	max-width: 600px;
+	min-width: 430px;
 	margin: 0 auto -8px auto;
 	border-bottom: 2px solid #444;
 }
@@ -164,9 +165,9 @@ body, html {
 }
 
 #description {
-	font-size: 0.94rem;
+	font-size: 0.9rem;
 	font-family: 'Lucida';
-	line-height: 140%;
+	line-height: 160%;
 	margin: 0 0 10px 0;
 }
 
@@ -264,10 +265,11 @@ input {
     #content {
         margin: 15% auto 15% auto;
         width: 85%;
+        min-width: 280px;
     }
 
     #logo {
-        margin: 20px auto 0 auto;
+        margin: 10px auto 0 auto;
     }
 
     .fb-like {
@@ -276,18 +278,50 @@ input {
 
     #mce-EMAIL {
         width: 100%;
-        height: 50px;
+        height: 55px;
         font-size: 1.5rem;
         text-align: center;
+        border: 5px solid #d5d5d5;
+        margin: 30px 0 0 0;
     }
 
     #mc-embedded-subscribe {
         width: 100%;
-        margin: 5px auto 5% auto;
+        margin: 0px auto 5% auto;
         height: 50px;
         font-size: 1.5rem;
         position: relative;
+        background-color: #d5d5d5;
     }
+
+    #mce-EMAIL.ready {
+		border: 5px solid #0060A8;
+		-webkit-transition: ease-out 0.5s;
+	    -moz-transition: ease-out 0.5s;
+	    -o-transition: ease-out 0.5s;
+	    transition: ease-out 0.5s;
+    }
+
+    #mc-embedded-subscribe:hover {
+		background-color: #d5d5d5;
+		color: #fff;
+		-webkit-transition: ease-out 0.2s;
+	    -moz-transition: ease-out 0.2s;
+	    -o-transition: ease-out 0.2s;
+	    transition: ease-out 0.2s;
+	}
+
+	#mc_embed_signup .button.ready:hover {
+		background-color: #d5d5d5;
+	    -webkit-transition: ease-out 0.2s;
+	    -moz-transition: ease-out 0.2s;
+	    -o-transition: ease-out 0.2s;
+	    transition: ease-out 0.2s;
+	}
+
+    #mce-EMAIL:focus {
+    	outline: 0px solid #bbb;
+	}
 
     #line {
         display: none;
@@ -311,6 +345,10 @@ input {
 
     #about {
         line-height: 130%;
+    }
+
+    #description {
+    	font-size: 1rem;
     }
 
 }
